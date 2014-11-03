@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 threesidedcube. All rights reserved.
 //
 
+#define API_VERSION [[NSBundle mainBundle] infoDictionary][@"TSCAPIVersion"]
+#define API_BASEURL [[NSBundle mainBundle] infoDictionary][@"TSCBaseURL"]
+#define API_APPID [[NSBundle mainBundle] infoDictionary][@"TSCAppId"]
+
 #import "TSCLocalisationController.h"
 #import "TSCLocalisation.h"
 #import "NSString+LocalisedString.h"
@@ -56,8 +60,7 @@ static TSCLocalisationController *sharedController = nil;
     self = [super init];
     if (self) {
         
-        self.requestController = [[TSCRequestController alloc] initWithBaseAddress:@"http://arc.cubeapis.com/v1.3/apps/2"];
-        
+        self.requestController = [[TSCRequestController alloc] initWithBaseAddress:[NSString stringWithFormat:@"%@/%@/apps/%@", API_BASEURL, API_VERSION, API_APPID]];
     }
     
     return self;

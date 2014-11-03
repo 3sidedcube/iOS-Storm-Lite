@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TSCLocalisationController.h"
+#import "NSString+LocalisedString.h"
+#import "TSCStormLanguageController.h"
+#import "UIWindow+TSCWindow.h"
 
 @interface StormLite : NSObject
 

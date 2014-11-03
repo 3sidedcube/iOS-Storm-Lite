@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36137E3C1A07BF8D0013CBFA /* NSString+LocalisedString.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 361819251A0792AB00C18CCB /* NSString+LocalisedString.h */; };
 		3618190F1A078F1E00C18CCB /* StormLite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3618190E1A078F1E00C18CCB /* StormLite.h */; };
 		361819111A078F1E00C18CCB /* StormLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819101A078F1E00C18CCB /* StormLite.m */; };
 		361819171A078F1E00C18CCB /* libStormLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3618190B1A078F1E00C18CCB /* libStormLite.a */; };
@@ -46,12 +47,15 @@
 			dstSubfolderSpec = 16;
 			files = (
 				3618190F1A078F1E00C18CCB /* StormLite.h in CopyFiles */,
+				36137E3C1A07BF8D0013CBFA /* NSString+LocalisedString.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36137E341A07BDB20013CBFA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		36137E361A07BDD40013CBFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3618190B1A078F1E00C18CCB /* libStormLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStormLite.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3618190E1A078F1E00C18CCB /* StormLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StormLite.h; sourceTree = "<group>"; };
 		361819101A078F1E00C18CCB /* StormLite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StormLite.m; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 		361819021A078F1E00C18CCB = {
 			isa = PBXGroup;
 			children = (
+				36137E361A07BDD40013CBFA /* Foundation.framework */,
+				36137E341A07BDB20013CBFA /* libz.dylib */,
 				3618190D1A078F1E00C18CCB /* StormLite */,
 				3618191A1A078F1E00C18CCB /* StormLiteTests */,
 				3618190C1A078F1E00C18CCB /* Products */,
@@ -546,6 +552,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/StormLite\"";
 			};
 			name = Debug;
 		};
@@ -579,6 +586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/StormLite\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -658,6 +666,7 @@
 				361819211A078F1E00C18CCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		361819221A078F1E00C18CCB /* Build configuration list for PBXNativeTarget "StormLiteTests" */ = {
 			isa = XCConfigurationList;
@@ -666,6 +675,7 @@
 				361819241A078F1E00C18CCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
