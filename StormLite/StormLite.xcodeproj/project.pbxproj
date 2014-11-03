@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3618190F1A078F1E00C18CCB /* StormLite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3618190E1A078F1E00C18CCB /* StormLite.h */; };
+		361819111A078F1E00C18CCB /* StormLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819101A078F1E00C18CCB /* StormLite.m */; };
+		361819171A078F1E00C18CCB /* libStormLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3618190B1A078F1E00C18CCB /* libStormLite.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		361819181A078F1E00C18CCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 361819031A078F1E00C18CCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3618190A1A078F1E00C18CCB;
+			remoteInfo = StormLite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		361819091A078F1E00C18CCB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3618190F1A078F1E00C18CCB /* StormLite.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3618190B1A078F1E00C18CCB /* libStormLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStormLite.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3618190E1A078F1E00C18CCB /* StormLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StormLite.h; sourceTree = "<group>"; };
+		361819101A078F1E00C18CCB /* StormLite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StormLite.m; sourceTree = "<group>"; };
+		361819161A078F1E00C18CCB /* StormLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StormLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3618191C1A078F1E00C18CCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		361819081A078F1E00C18CCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		361819131A078F1E00C18CCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				361819171A078F1E00C18CCB /* libStormLite.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		361819021A078F1E00C18CCB = {
+			isa = PBXGroup;
+			children = (
+				3618190D1A078F1E00C18CCB /* StormLite */,
+				3618191A1A078F1E00C18CCB /* StormLiteTests */,
+				3618190C1A078F1E00C18CCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3618190C1A078F1E00C18CCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3618190B1A078F1E00C18CCB /* libStormLite.a */,
+				361819161A078F1E00C18CCB /* StormLiteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3618190D1A078F1E00C18CCB /* StormLite */ = {
+			isa = PBXGroup;
+			children = (
+				3618190E1A078F1E00C18CCB /* StormLite.h */,
+				361819101A078F1E00C18CCB /* StormLite.m */,
+			);
+			path = StormLite;
+			sourceTree = "<group>";
+		};
+		3618191A1A078F1E00C18CCB /* StormLiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				3618191B1A078F1E00C18CCB /* Supporting Files */,
+			);
+			path = StormLiteTests;
+			sourceTree = "<group>";
+		};
+		3618191B1A078F1E00C18CCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3618191C1A078F1E00C18CCB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3618190A1A078F1E00C18CCB /* StormLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3618191F1A078F1E00C18CCB /* Build configuration list for PBXNativeTarget "StormLite" */;
+			buildPhases = (
+				361819071A078F1E00C18CCB /* Sources */,
+				361819081A078F1E00C18CCB /* Frameworks */,
+				361819091A078F1E00C18CCB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StormLite;
+			productName = StormLite;
+			productReference = 3618190B1A078F1E00C18CCB /* libStormLite.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		361819151A078F1E00C18CCB /* StormLiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 361819221A078F1E00C18CCB /* Build configuration list for PBXNativeTarget "StormLiteTests" */;
+			buildPhases = (
+				361819121A078F1E00C18CCB /* Sources */,
+				361819131A078F1E00C18CCB /* Frameworks */,
+				361819141A078F1E00C18CCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				361819191A078F1E00C18CCB /* PBXTargetDependency */,
+			);
+			name = StormLiteTests;
+			productName = StormLiteTests;
+			productReference = 361819161A078F1E00C18CCB /* StormLiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		361819031A078F1E00C18CCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Sam Houghton";
+				TargetAttributes = {
+					3618190A1A078F1E00C18CCB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					361819151A078F1E00C18CCB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 361819061A078F1E00C18CCB /* Build configuration list for PBXProject "StormLite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 361819021A078F1E00C18CCB;
+			productRefGroup = 3618190C1A078F1E00C18CCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3618190A1A078F1E00C18CCB /* StormLite */,
+				361819151A078F1E00C18CCB /* StormLiteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		361819141A078F1E00C18CCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		361819071A078F1E00C18CCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				361819111A078F1E00C18CCB /* StormLite.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		361819121A078F1E00C18CCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		361819191A078F1E00C18CCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3618190A1A078F1E00C18CCB /* StormLite */;
+			targetProxy = 361819181A078F1E00C18CCB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3618191D1A078F1E00C18CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3618191E1A078F1E00C18CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		361819201A078F1E00C18CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		361819211A078F1E00C18CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		361819231A078F1E00C18CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StormLiteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		361819241A078F1E00C18CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StormLiteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		361819061A078F1E00C18CCB /* Build configuration list for PBXProject "StormLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3618191D1A078F1E00C18CCB /* Debug */,
+				3618191E1A078F1E00C18CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3618191F1A078F1E00C18CCB /* Build configuration list for PBXNativeTarget "StormLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				361819201A078F1E00C18CCB /* Debug */,
+				361819211A078F1E00C18CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		361819221A078F1E00C18CCB /* Build configuration list for PBXNativeTarget "StormLiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				361819231A078F1E00C18CCB /* Debug */,
+				361819241A078F1E00C18CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 361819031A078F1E00C18CCB /* Project object */;
+}
