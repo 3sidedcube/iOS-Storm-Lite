@@ -10,6 +10,22 @@
 		3618190F1A078F1E00C18CCB /* StormLite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3618190E1A078F1E00C18CCB /* StormLite.h */; };
 		361819111A078F1E00C18CCB /* StormLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819101A078F1E00C18CCB /* StormLite.m */; };
 		361819171A078F1E00C18CCB /* libStormLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3618190B1A078F1E00C18CCB /* libStormLite.a */; };
+		361819271A0792AB00C18CCB /* NSString+LocalisedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819261A0792AB00C18CCB /* NSString+LocalisedString.m */; };
+		3618192A1A0792E200C18CCB /* TSCLocalisation.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819291A0792E200C18CCB /* TSCLocalisation.m */; };
+		3618192D1A0792F000C18CCB /* TSCLocalisationKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3618192C1A0792F000C18CCB /* TSCLocalisationKeyValue.m */; };
+		361819301A0792FD00C18CCB /* TSCLocalisationLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3618192F1A0792FD00C18CCB /* TSCLocalisationLanguage.m */; };
+		361819331A07932B00C18CCB /* TSCLocalisationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819321A07932B00C18CCB /* TSCLocalisationController.m */; };
+		361819361A07935500C18CCB /* UIWindow+TSCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819351A07935500C18CCB /* UIWindow+TSCWindow.m */; };
+		361819391A07936F00C18CCB /* TSCAuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819381A07936F00C18CCB /* TSCAuthenticationController.m */; };
+		3618193C1A07939400C18CCB /* TSCDeveloperController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3618193B1A07939400C18CCB /* TSCDeveloperController.m */; };
+		361819421A07956C00C18CCB /* PCHUDActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819411A07956C00C18CCB /* PCHUDActivityView.m */; };
+		361819481A0796ED00C18CCB /* TSCContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819471A0796ED00C18CCB /* TSCContentController.m */; };
+		3618194B1A07970400C18CCB /* TSCStormLanguageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3618194A1A07970400C18CCB /* TSCStormLanguageController.m */; };
+		3618194E1A07972900C18CCB /* untar.c in Sources */ = {isa = PBXBuildFile; fileRef = 3618194C1A07972900C18CCB /* untar.c */; };
+		3618196F1A07A14500C18CCB /* libThunderRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3618196E1A07A14500C18CCB /* libThunderRequest.a */; };
+		361819781A07A38A00C18CCB /* libThunderTable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361819771A07A38A00C18CCB /* libThunderTable.a */; };
+		361819A61A07A46300C18CCB /* TSCLocalisationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819A51A07A46300C18CCB /* TSCLocalisationEditViewController.m */; };
+		361819AA1A07A51E00C18CCB /* libThunderBasics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361819A91A07A51E00C18CCB /* libThunderBasics.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +57,109 @@
 		361819101A078F1E00C18CCB /* StormLite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StormLite.m; sourceTree = "<group>"; };
 		361819161A078F1E00C18CCB /* StormLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StormLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3618191C1A078F1E00C18CCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		361819251A0792AB00C18CCB /* NSString+LocalisedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LocalisedString.h"; sourceTree = "<group>"; };
+		361819261A0792AB00C18CCB /* NSString+LocalisedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LocalisedString.m"; sourceTree = "<group>"; };
+		361819281A0792E200C18CCB /* TSCLocalisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLocalisation.h; sourceTree = "<group>"; };
+		361819291A0792E200C18CCB /* TSCLocalisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCLocalisation.m; sourceTree = "<group>"; };
+		3618192B1A0792F000C18CCB /* TSCLocalisationKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLocalisationKeyValue.h; sourceTree = "<group>"; };
+		3618192C1A0792F000C18CCB /* TSCLocalisationKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCLocalisationKeyValue.m; sourceTree = "<group>"; };
+		3618192E1A0792FD00C18CCB /* TSCLocalisationLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLocalisationLanguage.h; sourceTree = "<group>"; };
+		3618192F1A0792FD00C18CCB /* TSCLocalisationLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCLocalisationLanguage.m; sourceTree = "<group>"; };
+		361819311A07932B00C18CCB /* TSCLocalisationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLocalisationController.h; sourceTree = "<group>"; };
+		361819321A07932B00C18CCB /* TSCLocalisationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCLocalisationController.m; sourceTree = "<group>"; };
+		361819341A07935500C18CCB /* UIWindow+TSCWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+TSCWindow.h"; sourceTree = "<group>"; };
+		361819351A07935500C18CCB /* UIWindow+TSCWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+TSCWindow.m"; sourceTree = "<group>"; };
+		361819371A07936F00C18CCB /* TSCAuthenticationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCAuthenticationController.h; sourceTree = "<group>"; };
+		361819381A07936F00C18CCB /* TSCAuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCAuthenticationController.m; sourceTree = "<group>"; };
+		3618193A1A07939400C18CCB /* TSCDeveloperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCDeveloperController.h; sourceTree = "<group>"; };
+		3618193B1A07939400C18CCB /* TSCDeveloperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCDeveloperController.m; sourceTree = "<group>"; };
+		361819401A07956C00C18CCB /* PCHUDActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCHUDActivityView.h; sourceTree = "<group>"; };
+		361819411A07956C00C18CCB /* PCHUDActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCHUDActivityView.m; sourceTree = "<group>"; };
+		361819461A0796ED00C18CCB /* TSCContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCContentController.h; sourceTree = "<group>"; };
+		361819471A0796ED00C18CCB /* TSCContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCContentController.m; sourceTree = "<group>"; };
+		361819491A07970400C18CCB /* TSCStormLanguageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCStormLanguageController.h; sourceTree = "<group>"; };
+		3618194A1A07970400C18CCB /* TSCStormLanguageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCStormLanguageController.m; sourceTree = "<group>"; };
+		3618194C1A07972900C18CCB /* untar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = untar.c; sourceTree = "<group>"; };
+		3618194D1A07972900C18CCB /* untar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = untar.h; sourceTree = "<group>"; };
+		3618196E1A07A14500C18CCB /* libThunderRequest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libThunderRequest.a; sourceTree = "<group>"; };
+		361819711A07A15F00C18CCB /* TSCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCRequest.h; sourceTree = "<group>"; };
+		361819721A07A15F00C18CCB /* TSCRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCRequestController.h; sourceTree = "<group>"; };
+		361819731A07A15F00C18CCB /* TSCRequestCredential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCRequestCredential.h; sourceTree = "<group>"; };
+		361819741A07A15F00C18CCB /* TSCRequestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCRequestResponse.h; sourceTree = "<group>"; };
+		361819751A07A15F00C18CCB /* TSCThunderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCThunderRequest.h; sourceTree = "<group>"; };
+		361819771A07A38A00C18CCB /* libThunderTable.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libThunderTable.a; sourceTree = "<group>"; };
+		3618197A1A07A3A600C18CCB /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPlaceholderTextView.h; sourceTree = "<group>"; };
+		3618197B1A07A3A600C18CCB /* TSCCheckableItemBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCCheckableItemBase.h; sourceTree = "<group>"; };
+		3618197C1A07A3A600C18CCB /* TSCCheckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCCheckView.h; sourceTree = "<group>"; };
+		3618197D1A07A3A600C18CCB /* TSCDefaultTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCDefaultTheme.h; sourceTree = "<group>"; };
+		3618197E1A07A3A600C18CCB /* TSCImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCImageController.h; sourceTree = "<group>"; };
+		3618197F1A07A3A600C18CCB /* TSCImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCImageRequestOperation.h; sourceTree = "<group>"; };
+		361819801A07A3A600C18CCB /* TSCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCItem.h; sourceTree = "<group>"; };
+		361819811A07A3A600C18CCB /* TSCItemPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCItemPickerController.h; sourceTree = "<group>"; };
+		361819821A07A3A600C18CCB /* TSCTableImageRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableImageRow.h; sourceTree = "<group>"; };
+		361819831A07A3A600C18CCB /* TSCTableImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableImageViewCell.h; sourceTree = "<group>"; };
+		361819841A07A3A600C18CCB /* TSCTableInputCheckRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputCheckRow.h; sourceTree = "<group>"; };
+		361819851A07A3A600C18CCB /* TSCTableInputCheckViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputCheckViewCell.h; sourceTree = "<group>"; };
+		361819861A07A3A600C18CCB /* TSCTableInputDatePickerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputDatePickerRow.h; sourceTree = "<group>"; };
+		361819871A07A3A600C18CCB /* TSCTableInputDatePickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputDatePickerViewCell.h; sourceTree = "<group>"; };
+		361819881A07A3A600C18CCB /* TSCTableInputPickerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputPickerRow.h; sourceTree = "<group>"; };
+		361819891A07A3A600C18CCB /* TSCTableInputPickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputPickerViewCell.h; sourceTree = "<group>"; };
+		3618198A1A07A3A600C18CCB /* TSCTableInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputRow.h; sourceTree = "<group>"; };
+		3618198B1A07A3A600C18CCB /* TSCTableInputRowDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputRowDataSource.h; sourceTree = "<group>"; };
+		3618198C1A07A3A600C18CCB /* TSCTableInputSliderRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputSliderRow.h; sourceTree = "<group>"; };
+		3618198D1A07A3A600C18CCB /* TSCTableInputSliderRowDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputSliderRowDataSource.h; sourceTree = "<group>"; };
+		3618198E1A07A3A600C18CCB /* TSCTableInputSliderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputSliderViewCell.h; sourceTree = "<group>"; };
+		3618198F1A07A3A600C18CCB /* TSCTableInputSwitchRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputSwitchRow.h; sourceTree = "<group>"; };
+		361819901A07A3A600C18CCB /* TSCTableInputSwitchViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputSwitchViewCell.h; sourceTree = "<group>"; };
+		361819911A07A3A600C18CCB /* TSCTableInputTextFieldRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputTextFieldRow.h; sourceTree = "<group>"; };
+		361819921A07A3A600C18CCB /* TSCTableInputTextFieldViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputTextFieldViewCell.h; sourceTree = "<group>"; };
+		361819931A07A3A600C18CCB /* TSCTableInputTextViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputTextViewRow.h; sourceTree = "<group>"; };
+		361819941A07A3A600C18CCB /* TSCTableInputTextViewViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputTextViewViewCell.h; sourceTree = "<group>"; };
+		361819951A07A3A600C18CCB /* TSCTableInputViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableInputViewCell.h; sourceTree = "<group>"; };
+		361819961A07A3A600C18CCB /* TSCTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableRow.h; sourceTree = "<group>"; };
+		361819971A07A3A600C18CCB /* TSCTableRowDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableRowDataSource.h; sourceTree = "<group>"; };
+		361819981A07A3A600C18CCB /* TSCTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableSection.h; sourceTree = "<group>"; };
+		361819991A07A3A600C18CCB /* TSCTableSectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableSectionDataSource.h; sourceTree = "<group>"; };
+		3618199A1A07A3A600C18CCB /* TSCTableSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableSelection.h; sourceTree = "<group>"; };
+		3618199B1A07A3A600C18CCB /* TSCTableSortedSections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableSortedSections.h; sourceTree = "<group>"; };
+		3618199C1A07A3A600C18CCB /* TSCTableValue1Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableValue1Row.h; sourceTree = "<group>"; };
+		3618199D1A07A3A600C18CCB /* TSCTableValue1ViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableValue1ViewCell.h; sourceTree = "<group>"; };
+		3618199E1A07A3A600C18CCB /* TSCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableViewCell.h; sourceTree = "<group>"; };
+		3618199F1A07A3A600C18CCB /* TSCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTableViewController.h; sourceTree = "<group>"; };
+		361819A01A07A3A600C18CCB /* TSCTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCTheme.h; sourceTree = "<group>"; };
+		361819A11A07A3A600C18CCB /* TSCThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCThemeManager.h; sourceTree = "<group>"; };
+		361819A21A07A3A600C18CCB /* TSCThunderTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCThunderTable.h; sourceTree = "<group>"; };
+		361819A31A07A3A600C18CCB /* UIImageView+TSCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TSCImageView.h"; sourceTree = "<group>"; };
+		361819A41A07A46300C18CCB /* TSCLocalisationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLocalisationEditViewController.h; sourceTree = "<group>"; };
+		361819A51A07A46300C18CCB /* TSCLocalisationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCLocalisationEditViewController.m; sourceTree = "<group>"; };
+		361819A91A07A51E00C18CCB /* libThunderBasics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libThunderBasics.a; sourceTree = "<group>"; };
+		361819AB1A07A52C00C18CCB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		361819AC1A07A52C00C18CCB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		361819AD1A07A52C00C18CCB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		361819AE1A07A52C00C18CCB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		361819AF1A07A52C00C18CCB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		361819B01A07A52C00C18CCB /* NSArray+TSCArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TSCArray.h"; sourceTree = "<group>"; };
+		361819B11A07A52C00C18CCB /* NSDate+TSCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TSCDate.h"; sourceTree = "<group>"; };
+		361819B21A07A52C00C18CCB /* NSDictionary+TSCDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TSCDictionary.h"; sourceTree = "<group>"; };
+		361819B31A07A52C00C18CCB /* NSJSONSerialization+TSCJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+TSCJSONSerialization.h"; sourceTree = "<group>"; };
+		361819B41A07A52C00C18CCB /* TSCAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCAlertAction.h; sourceTree = "<group>"; };
+		361819B51A07A52C00C18CCB /* TSCAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCAlertViewController.h; sourceTree = "<group>"; };
+		361819B61A07A52C00C18CCB /* TSCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCAnnotation.h; sourceTree = "<group>"; };
+		361819B71A07A52C00C18CCB /* TSCAppInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCAppInfoController.h; sourceTree = "<group>"; };
+		361819B81A07A52C00C18CCB /* TSCDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCDatabase.h; sourceTree = "<group>"; };
+		361819B91A07A52C00C18CCB /* TSCGraphPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCGraphPoint.h; sourceTree = "<group>"; };
+		361819BA1A07A52C00C18CCB /* TSCLanguageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLanguageController.h; sourceTree = "<group>"; };
+		361819BB1A07A52C00C18CCB /* TSCLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCLineGraphView.h; sourceTree = "<group>"; };
+		361819BC1A07A52C00C18CCB /* TSCMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCMapView.h; sourceTree = "<group>"; };
+		361819BD1A07A52C00C18CCB /* TSCObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCObject.h; sourceTree = "<group>"; };
+		361819BE1A07A52C00C18CCB /* TSCThunderBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCThunderBasics.h; sourceTree = "<group>"; };
+		361819BF1A07A52C00C18CCB /* TSCToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCToast.h; sourceTree = "<group>"; };
+		361819C01A07A52C00C18CCB /* TSCToastNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCToastNotificationController.h; sourceTree = "<group>"; };
+		361819C11A07A52C00C18CCB /* TSCToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCToastView.h; sourceTree = "<group>"; };
+		361819C21A07A52C00C18CCB /* TSCToastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCToastViewController.h; sourceTree = "<group>"; };
+		361819C31A07A52C00C18CCB /* TSCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCWebViewController.h; sourceTree = "<group>"; };
+		361819C41A07A52C00C18CCB /* UIColor+TSCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TSCColor.h"; sourceTree = "<group>"; };
+		361819C51A07A52C00C18CCB /* UITabBarController+TSCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+TSCTabBarController.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +167,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				361819AA1A07A51E00C18CCB /* libThunderBasics.a in Frameworks */,
+				3618196F1A07A14500C18CCB /* libThunderRequest.a in Frameworks */,
+				361819781A07A38A00C18CCB /* libThunderTable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,8 +205,35 @@
 		3618190D1A078F1E00C18CCB /* StormLite */ = {
 			isa = PBXGroup;
 			children = (
+				3618194F1A079F0800C18CCB /* libraries */,
 				3618190E1A078F1E00C18CCB /* StormLite.h */,
 				361819101A078F1E00C18CCB /* StormLite.m */,
+				361819251A0792AB00C18CCB /* NSString+LocalisedString.h */,
+				361819261A0792AB00C18CCB /* NSString+LocalisedString.m */,
+				361819281A0792E200C18CCB /* TSCLocalisation.h */,
+				361819291A0792E200C18CCB /* TSCLocalisation.m */,
+				3618192B1A0792F000C18CCB /* TSCLocalisationKeyValue.h */,
+				3618192C1A0792F000C18CCB /* TSCLocalisationKeyValue.m */,
+				3618192E1A0792FD00C18CCB /* TSCLocalisationLanguage.h */,
+				3618192F1A0792FD00C18CCB /* TSCLocalisationLanguage.m */,
+				361819311A07932B00C18CCB /* TSCLocalisationController.h */,
+				361819321A07932B00C18CCB /* TSCLocalisationController.m */,
+				361819341A07935500C18CCB /* UIWindow+TSCWindow.h */,
+				361819351A07935500C18CCB /* UIWindow+TSCWindow.m */,
+				361819371A07936F00C18CCB /* TSCAuthenticationController.h */,
+				361819381A07936F00C18CCB /* TSCAuthenticationController.m */,
+				3618193A1A07939400C18CCB /* TSCDeveloperController.h */,
+				3618193B1A07939400C18CCB /* TSCDeveloperController.m */,
+				361819401A07956C00C18CCB /* PCHUDActivityView.h */,
+				361819411A07956C00C18CCB /* PCHUDActivityView.m */,
+				361819461A0796ED00C18CCB /* TSCContentController.h */,
+				361819471A0796ED00C18CCB /* TSCContentController.m */,
+				361819491A07970400C18CCB /* TSCStormLanguageController.h */,
+				3618194A1A07970400C18CCB /* TSCStormLanguageController.m */,
+				361819A41A07A46300C18CCB /* TSCLocalisationEditViewController.h */,
+				361819A51A07A46300C18CCB /* TSCLocalisationEditViewController.m */,
+				3618194C1A07972900C18CCB /* untar.c */,
+				3618194D1A07972900C18CCB /* untar.h */,
 			);
 			path = StormLite;
 			sourceTree = "<group>";
@@ -103,6 +252,138 @@
 				3618191C1A078F1E00C18CCB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3618194F1A079F0800C18CCB /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				361819761A07A34900C18CCB /* Thunder Table */,
+				3618196D1A07A0F700C18CCB /* Thunder Request */,
+				361819521A079F2800C18CCB /* Thunder Basics */,
+			);
+			name = libraries;
+			sourceTree = "<group>";
+		};
+		361819521A079F2800C18CCB /* Thunder Basics */ = {
+			isa = PBXGroup;
+			children = (
+				361819531A079F3500C18CCB /* Headers */,
+				361819A91A07A51E00C18CCB /* libThunderBasics.a */,
+			);
+			name = "Thunder Basics";
+			sourceTree = "<group>";
+		};
+		361819531A079F3500C18CCB /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				361819AB1A07A52C00C18CCB /* FMDatabase.h */,
+				361819AC1A07A52C00C18CCB /* FMDatabaseAdditions.h */,
+				361819AD1A07A52C00C18CCB /* FMDatabasePool.h */,
+				361819AE1A07A52C00C18CCB /* FMDatabaseQueue.h */,
+				361819AF1A07A52C00C18CCB /* FMResultSet.h */,
+				361819B01A07A52C00C18CCB /* NSArray+TSCArray.h */,
+				361819B11A07A52C00C18CCB /* NSDate+TSCDate.h */,
+				361819B21A07A52C00C18CCB /* NSDictionary+TSCDictionary.h */,
+				361819B31A07A52C00C18CCB /* NSJSONSerialization+TSCJSONSerialization.h */,
+				361819B41A07A52C00C18CCB /* TSCAlertAction.h */,
+				361819B51A07A52C00C18CCB /* TSCAlertViewController.h */,
+				361819B61A07A52C00C18CCB /* TSCAnnotation.h */,
+				361819B71A07A52C00C18CCB /* TSCAppInfoController.h */,
+				361819B81A07A52C00C18CCB /* TSCDatabase.h */,
+				361819B91A07A52C00C18CCB /* TSCGraphPoint.h */,
+				361819BA1A07A52C00C18CCB /* TSCLanguageController.h */,
+				361819BB1A07A52C00C18CCB /* TSCLineGraphView.h */,
+				361819BC1A07A52C00C18CCB /* TSCMapView.h */,
+				361819BD1A07A52C00C18CCB /* TSCObject.h */,
+				361819BE1A07A52C00C18CCB /* TSCThunderBasics.h */,
+				361819BF1A07A52C00C18CCB /* TSCToast.h */,
+				361819C01A07A52C00C18CCB /* TSCToastNotificationController.h */,
+				361819C11A07A52C00C18CCB /* TSCToastView.h */,
+				361819C21A07A52C00C18CCB /* TSCToastViewController.h */,
+				361819C31A07A52C00C18CCB /* TSCWebViewController.h */,
+				361819C41A07A52C00C18CCB /* UIColor+TSCColor.h */,
+				361819C51A07A52C00C18CCB /* UITabBarController+TSCTabBarController.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		3618196D1A07A0F700C18CCB /* Thunder Request */ = {
+			isa = PBXGroup;
+			children = (
+				361819701A07A15000C18CCB /* Headers */,
+				3618196E1A07A14500C18CCB /* libThunderRequest.a */,
+			);
+			name = "Thunder Request";
+			sourceTree = "<group>";
+		};
+		361819701A07A15000C18CCB /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				361819711A07A15F00C18CCB /* TSCRequest.h */,
+				361819721A07A15F00C18CCB /* TSCRequestController.h */,
+				361819731A07A15F00C18CCB /* TSCRequestCredential.h */,
+				361819741A07A15F00C18CCB /* TSCRequestResponse.h */,
+				361819751A07A15F00C18CCB /* TSCThunderRequest.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		361819761A07A34900C18CCB /* Thunder Table */ = {
+			isa = PBXGroup;
+			children = (
+				361819791A07A39900C18CCB /* Headers */,
+				361819771A07A38A00C18CCB /* libThunderTable.a */,
+			);
+			name = "Thunder Table";
+			sourceTree = "<group>";
+		};
+		361819791A07A39900C18CCB /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3618197A1A07A3A600C18CCB /* GCPlaceholderTextView.h */,
+				3618197B1A07A3A600C18CCB /* TSCCheckableItemBase.h */,
+				3618197C1A07A3A600C18CCB /* TSCCheckView.h */,
+				3618197D1A07A3A600C18CCB /* TSCDefaultTheme.h */,
+				3618197E1A07A3A600C18CCB /* TSCImageController.h */,
+				3618197F1A07A3A600C18CCB /* TSCImageRequestOperation.h */,
+				361819801A07A3A600C18CCB /* TSCItem.h */,
+				361819811A07A3A600C18CCB /* TSCItemPickerController.h */,
+				361819821A07A3A600C18CCB /* TSCTableImageRow.h */,
+				361819831A07A3A600C18CCB /* TSCTableImageViewCell.h */,
+				361819841A07A3A600C18CCB /* TSCTableInputCheckRow.h */,
+				361819851A07A3A600C18CCB /* TSCTableInputCheckViewCell.h */,
+				361819861A07A3A600C18CCB /* TSCTableInputDatePickerRow.h */,
+				361819871A07A3A600C18CCB /* TSCTableInputDatePickerViewCell.h */,
+				361819881A07A3A600C18CCB /* TSCTableInputPickerRow.h */,
+				361819891A07A3A600C18CCB /* TSCTableInputPickerViewCell.h */,
+				3618198A1A07A3A600C18CCB /* TSCTableInputRow.h */,
+				3618198B1A07A3A600C18CCB /* TSCTableInputRowDataSource.h */,
+				3618198C1A07A3A600C18CCB /* TSCTableInputSliderRow.h */,
+				3618198D1A07A3A600C18CCB /* TSCTableInputSliderRowDataSource.h */,
+				3618198E1A07A3A600C18CCB /* TSCTableInputSliderViewCell.h */,
+				3618198F1A07A3A600C18CCB /* TSCTableInputSwitchRow.h */,
+				361819901A07A3A600C18CCB /* TSCTableInputSwitchViewCell.h */,
+				361819911A07A3A600C18CCB /* TSCTableInputTextFieldRow.h */,
+				361819921A07A3A600C18CCB /* TSCTableInputTextFieldViewCell.h */,
+				361819931A07A3A600C18CCB /* TSCTableInputTextViewRow.h */,
+				361819941A07A3A600C18CCB /* TSCTableInputTextViewViewCell.h */,
+				361819951A07A3A600C18CCB /* TSCTableInputViewCell.h */,
+				361819961A07A3A600C18CCB /* TSCTableRow.h */,
+				361819971A07A3A600C18CCB /* TSCTableRowDataSource.h */,
+				361819981A07A3A600C18CCB /* TSCTableSection.h */,
+				361819991A07A3A600C18CCB /* TSCTableSectionDataSource.h */,
+				3618199A1A07A3A600C18CCB /* TSCTableSelection.h */,
+				3618199B1A07A3A600C18CCB /* TSCTableSortedSections.h */,
+				3618199C1A07A3A600C18CCB /* TSCTableValue1Row.h */,
+				3618199D1A07A3A600C18CCB /* TSCTableValue1ViewCell.h */,
+				3618199E1A07A3A600C18CCB /* TSCTableViewCell.h */,
+				3618199F1A07A3A600C18CCB /* TSCTableViewController.h */,
+				361819A01A07A3A600C18CCB /* TSCTheme.h */,
+				361819A11A07A3A600C18CCB /* TSCThemeManager.h */,
+				361819A21A07A3A600C18CCB /* TSCThunderTable.h */,
+				361819A31A07A3A600C18CCB /* UIImageView+TSCImageView.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +475,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				361819111A078F1E00C18CCB /* StormLite.m in Sources */,
+				361819301A0792FD00C18CCB /* TSCLocalisationLanguage.m in Sources */,
+				3618194B1A07970400C18CCB /* TSCStormLanguageController.m in Sources */,
+				361819481A0796ED00C18CCB /* TSCContentController.m in Sources */,
+				361819421A07956C00C18CCB /* PCHUDActivityView.m in Sources */,
+				361819331A07932B00C18CCB /* TSCLocalisationController.m in Sources */,
+				3618192A1A0792E200C18CCB /* TSCLocalisation.m in Sources */,
+				3618193C1A07939400C18CCB /* TSCDeveloperController.m in Sources */,
+				3618192D1A0792F000C18CCB /* TSCLocalisationKeyValue.m in Sources */,
+				361819A61A07A46300C18CCB /* TSCLocalisationEditViewController.m in Sources */,
+				3618194E1A07972900C18CCB /* untar.c in Sources */,
+				361819361A07935500C18CCB /* UIWindow+TSCWindow.m in Sources */,
+				361819391A07936F00C18CCB /* TSCAuthenticationController.m in Sources */,
+				361819271A0792AB00C18CCB /* NSString+LocalisedString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +586,10 @@
 		361819201A078F1E00C18CCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StormLite",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -301,6 +599,10 @@
 		361819211A078F1E00C18CCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StormLite",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
