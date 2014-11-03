@@ -9,6 +9,8 @@
 #import "NSString+LocalisedString.h"
 #import <objc/runtime.h>
 #import "TSCThunderBasics.h"
+#import "TSCStormLanguageController.h"
+#import "TSCLocalisationController.h"
 
 @interface NSString (LocalisedStringPrivate)
 
@@ -20,10 +22,20 @@
 
 + (instancetype)stringWithLocalisationKey:(NSString *)key
 {
-    NSString *string = TSCLanguageString(key);
+    
+    NSString *currentLanguage = [[TSCStormLanguageController sharedController] currentLanguageShortKey];
+    NSString *string = nil;
+    
+    if ([[TSCLocalisationController sharedController] localisationDictionaryForKey:key]) {
+        
+        NSDictionary *localisationDictionary = [[TSCLocalisationController sharedController] localisationDictionaryForKey:key];
+        string = [NSString stringWithFormat:@"%@",localisationDictionary[currentLanguage]]; // There is a reason this is happening. It fixes a bug where these strings can't be higlighted for editing.
+    } else {
+        string = TSCLanguageString(key);
+    }
     string.localisationKey = key;
     
-    return string;
+    return string ? string : key;
 }
 
 #pragma mark - setters/getters
