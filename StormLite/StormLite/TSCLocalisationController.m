@@ -581,6 +581,13 @@ static TSCLocalisationController *sharedController = nil;
             
         }
         
+        if (response.array.count < 1) {
+            
+            completion(nil, nil);
+            return;
+        }
+        
+        
         NSMutableArray *localisations = [NSMutableArray array];
         
         for (NSString *localisationKey in response.dictionary.allKeys) {
@@ -607,6 +614,10 @@ static TSCLocalisationController *sharedController = nil;
             completion(nil, error);
             return;
             
+        }
+        
+        if (!response.array) {
+            return;
         }
         
         NSMutableArray *languages = [NSMutableArray array];
