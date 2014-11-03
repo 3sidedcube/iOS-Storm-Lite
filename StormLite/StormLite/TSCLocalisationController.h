@@ -69,4 +69,10 @@ typedef void (^TSCLocalisationRefreshCompletion)(NSError *error);
  */
 - (NSString *)localisedLanguageNameForLanguageKey:(NSString *)key;
 
+/**
+ @abstract If the user has edited strings in the CMS this will return the string they have saved
+ @param key The localisation key to be used to find the readable string
+ */
+- (NSDictionary *)localisationDictionaryForKey:(NSString *)key;
+
 @end

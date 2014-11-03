@@ -9,6 +9,15 @@
 #import "TSCLocalisation.h"
 #import "TSCThunderTable.h"
 
+@class TSCLocalisationEditViewController;
+
+@protocol TSCLocalisationEditViewControllerDelegate <NSObject>
+
+- (void)editingCancelledInViewController:(TSCLocalisationEditViewController *)viewController;
+- (void)editingSavedInViewController:(TSCLocalisationEditViewController *)viewController;
+
+@end
+
 @interface TSCLocalisationEditViewController : TSCTableViewController
 
 - (instancetype)initWithLocalisation:(TSCLocalisation *)localisation;
@@ -23,5 +32,7 @@
  @abstract The localisation that is currently being edited
  */
 @property (nonatomic, strong) TSCLocalisation *localisation;
+
+@property (nonatomic, strong) id <TSCLocalisationEditViewControllerDelegate> delegate;
 
 @end

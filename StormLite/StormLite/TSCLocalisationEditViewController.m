@@ -22,7 +22,7 @@
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-     
+        
         self.localisation = localisation;
     }
     return self;
@@ -51,9 +51,9 @@
 
 - (void)reload
 {
- 
+    
     NSMutableArray *localisationsArray = [NSMutableArray array];
-        
+    
     for (TSCLocalisationKeyValue *localisationValue in self.localisation.localisationValues) {
         
         TSCTableInputTextFieldRow *localisationValueRow = [TSCTableInputTextFieldRow rowWithTitle:[[TSCLocalisationController sharedController] localisedLanguageNameForLanguageKey:localisationValue.languageCode] placeholder:localisationValue.languageCode inputId:localisationValue.languageCode required:YES];
@@ -64,7 +64,7 @@
     TSCTableSection *localisationsSection = [TSCTableSection sectionWithTitle:self.localisation.localisationKey footer:self.isNewLocalisation ? @"This string is not currently in the CMS, saving it will add it." : nil items:localisationsArray target:nil selector:nil];
     
     self.dataSource = @[localisationsSection];
-
+    
 }
 
 - (void)handleSave:(id)sender
@@ -76,12 +76,14 @@
         [[TSCLocalisationController sharedController] registerLocalisationEdited:self.localisation];
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:true completion:nil];
+    [self.delegate editingSavedInViewController:self];
 }
 
 - (void)handleCancel:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:true completion:nil];
+    [self.delegate editingCancelledInViewController:self];
 }
 
 @end
