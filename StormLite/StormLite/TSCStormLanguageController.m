@@ -100,8 +100,11 @@ static TSCStormLanguageController *sharedController = nil;
     // IF this point is reached there are no languages. FAIL.
     
     /* Last ditch attempt at loading a language is to fallback to the first english back possible.. */
-    self.currentLanguage = englishFallbackPack;
-    self.currentLanguageShortKey = [[self.currentLanguage componentsSeparatedByString:@"_"] objectAtIndex:1];
+    
+    if (englishFallbackPack) {
+        self.currentLanguage = englishFallbackPack;
+        self.currentLanguageShortKey = [[self.currentLanguage componentsSeparatedByString:@"_"] objectAtIndex:1];
+    }
     return [self.contentController pathForResource:self.currentLanguage ofType:@"json" inDirectory:@"languages"];
     
 }
