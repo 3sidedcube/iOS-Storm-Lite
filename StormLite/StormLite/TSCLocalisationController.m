@@ -66,7 +66,7 @@ static TSCLocalisationController *sharedController = nil;
     self = [super init];
     if (self) {
         
-        self.requestController = [[TSCRequestController alloc] initWithBaseAddress:@"http://arc.cubeapis.com/v1.3/apps/2"];
+        self.requestController = [[TSCRequestController alloc] initWithBaseAddress:[NSString stringWithFormat:@"%@/%@/apps/%@", API_BASEURL, API_VERSION, API_APPID]];
         self.localisationsDictionary = [NSMutableDictionary new];
     }
     
