@@ -36,6 +36,7 @@ typedef void (^TSCLocalisedViewAction)(UIView *localisedView, UIView *parentView
 @property (nonatomic, strong) UIView *currentWindowView;
 @property (nonatomic, strong) NSMutableArray *gestures;
 @property (nonatomic, readwrite) BOOL hasUsedWindowRoot;
+@property (nonatomic, readwrite) BOOL alertViewIsPresented;
 @property (nonatomic, strong) NSMutableArray *additionalLocalisedStrings;
 @property (nonatomic, strong) UIButton *additonalLocalisationButton;
 @property (nonatomic, strong) UIWindow *localisationEditingWindow;
@@ -95,6 +96,7 @@ static TSCLocalisationController *sharedController = nil;
                 }
                 
                 self.hasUsedWindowRoot = false;
+                self.alertViewIsPresented = false;
                 self.gestures = [NSMutableArray new];
                 self.additionalLocalisedStrings = [NSMutableArray new];
                 
@@ -122,7 +124,7 @@ static TSCLocalisationController *sharedController = nil;
                     }];
                     [self addGesturesToView:viewControllerView];
                     
-                    if (self.hasUsedWindowRoot) { // Does this always mean we're in a UIAlertView or UIActionSheet? I'm not so sure...
+                    if (self.alertViewIsPresented) { // Does this always mean we're in a UIAlertView or UIActionSheet? I'm not so sure...
                         
                         //                        NSLog(@"key window : %@",[UIApplication sharedApplication].keyWindow.subviews);
                         [self recurseSubviewsOfView:[UIApplication sharedApplication].keyWindow asAdditionalStrings:true];
@@ -282,7 +284,11 @@ static TSCLocalisationController *sharedController = nil;
         
     } else {
         viewToRecurse = [UIApplication sharedApplication].keyWindow.rootViewController.view;
-        self.hasUsedWindowRoot = YES;
+        
+        self.hasUsedWindowRoot = true;
+        if (![[UIApplication sharedApplication].keyWindow isMemberOfClass:[UIWindow class]]) {
+            self.alertViewIsPresented = true;
+        }
     }
     
     if (navigationController && class == [UINavigationController class]) {
