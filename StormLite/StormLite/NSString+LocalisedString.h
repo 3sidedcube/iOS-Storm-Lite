@@ -19,6 +19,6 @@
 /**
     @discussion Returns the key for the NSString, this can be nil-checked to see if a string is localised or not
 */
-@property (nonatomic, strong, readonly) NSString *localisationKey;
+@property (nonatomic, copy) NSString *localisationKey;
 
 @end

@@ -11,12 +11,15 @@
 #import "TSCThunderBasics.h"
 #import "TSCStormLanguageController.h"
 #import "TSCLocalisationController.h"
+#import "NSObject+AddedProperties.h"
 
 @interface NSString (LocalisedStringPrivate)
 
-@property (nonatomic, strong, readwrite) NSString *localisationKey;
+@property (nonatomic, copy) NSString *localisationKey;
 
 @end
+
+NSString * const kLocalisationKeyPropertyKey = @"kLocalisationKey";
 
 @implementation NSString (LocalisedString)
 
@@ -31,23 +34,30 @@
         NSDictionary *localisationDictionary = [[TSCLocalisationController sharedController] localisationDictionaryForKey:key];
         string = [NSString stringWithFormat:@"%@",localisationDictionary[currentLanguage]]; // There is a reason this is happening. It fixes a bug where these strings can't be higlighted for editing.
     } else {
-        string = TSCLanguageString(key);
+        if (TSCLanguageString(key)) {
+            string = TSCLanguageString(key);
+        } else {
+            string = key;
+        }
     }
-    string.localisationKey = key;
     
-    return string ? string : key;
+    string.localisationKey = key;
+    return string;
+//    string.localisationKey = key;
 }
 
 #pragma mark - setters/getters
 
 - (NSString *)localisationKey
 {
-    return objc_getAssociatedObject(self, @selector(localisationKey));
+    return [self associativeObjectForKey:@"localisationKey"];
+        //    return objc_getAssociatedObject(self, (__bridge const void *)(kLocalisationKeyPropertyKey));
 }
 
 - (void)setLocalisationKey:(NSString *)localisationKey
 {
-    objc_setAssociatedObject(self, @selector(localisationKey), localisationKey, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setAssociativeObject:localisationKey forKey:@"localisationKey"];
+//    objc_setAssociatedObject(self, (__bridge const void *)(kLocalisationKeyPropertyKey), localisationKey, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

@@ -846,7 +846,6 @@ static TSCLocalisationController *sharedController = nil;
             
             completion(nil, error);
             return;
-            
         }
         
         NSMutableArray *languages = [NSMutableArray array];
@@ -854,7 +853,6 @@ static TSCLocalisationController *sharedController = nil;
             
             TSCLocalisationLanguage *newLanguage = [[TSCLocalisationLanguage alloc] initWithDictionary:languageDictionary];
             [languages addObject:newLanguage];
-            
         }
         
         self.availableLanguages = languages;
