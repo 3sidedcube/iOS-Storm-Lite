@@ -113,6 +113,17 @@ static TSCLocalisationController *sharedController = nil;
                     [self addGesturesToView:navigationControllerView];
                 }
                 
+                UIView *tabBarView = (UIView *)[self selectCurrentViewControllerViewWithClass:[UITabBarController class]];
+                if (tabBarView) {
+                    
+                    [self recurseSubviewsOfView:tabBarView withLocalisedViewAction:^(UIView *view, UIView *parentView, NSString *string) {
+                        
+                        view.userInteractionEnabled = true;
+                        [self addHighlightToView:view];
+                    }];
+                    [self addGesturesToView:tabBarView];
+                }
+                
                 // Get main view controller and highlight its views
                 UIView *viewControllerView = (UIView *)[self selectCurrentViewControllerViewWithClass:[UIViewController class]];
                 if (viewControllerView) {
@@ -201,6 +212,13 @@ static TSCLocalisationController *sharedController = nil;
             [self removeGesturesFromView:navigationControllerView];
         }
         
+        UIView *tabBarView = (UIView *)[self selectCurrentViewControllerViewWithClass:[UITabBarController class]];
+        if (tabBarView) {
+            
+            [self removeLocalisationHightlights:tabBarView.subviews];
+            [self removeGesturesFromView:tabBarView];
+        }
+        
         // Get main view controller and remove highlights
         UIView *viewControllerView = (UIView *)[self selectCurrentViewControllerViewWithClass:[UIViewController class]];
         if (viewControllerView) {
@@ -269,25 +287,18 @@ static TSCLocalisationController *sharedController = nil;
 - (void)recurseNavigationController:(UINavigationController *)navigationViewController usingBlock:(TSCNavigationViewControllerRecursionCallback)block
 {
     UIViewController *viewController = navigationViewController.visibleViewController;
-    
-    if ([navigationViewController presentedViewController]) {
-        viewController = [navigationViewController presentedViewController];
-    }
+    UIViewController *presentedViewController = navigationViewController.presentedViewController;
     
     __block BOOL stop = false;
     __block TSCNavigationViewControllerRecursionCallback innerBlock = block;
     
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        
-        UINavigationController *navController = (UINavigationController *)viewController;
-        block(navController.visibleViewController, navController, &stop);
-    } else if (viewController.navigationController) {
+    if (viewController.navigationController || presentedViewController) {
         block(viewController, viewController.navigationController, &stop);
     } else {
         return;
     }
     
-    if (!stop) {
+    if (!stop && presentedViewController) {
         
         UINavigationController *navController;
         if ([viewController isKindOfClass:[UINavigationController class]]) {
@@ -319,6 +330,7 @@ static TSCLocalisationController *sharedController = nil;
 {
     UIView *viewToRecurse;
     UINavigationController *navigationController;
+    UITabBarController *tabController;
     UITableViewController *tableViewController;
     TSCTableViewController *tscTableViewController;
     
@@ -362,7 +374,7 @@ static TSCLocalisationController *sharedController = nil;
         
     } else if ([highestWindow.rootViewController isKindOfClass:[UITabBarController class]]) {
         
-        UITabBarController *tabController = (UITabBarController *)highestWindow.rootViewController;
+        tabController = (UITabBarController *)highestWindow.rootViewController;
         
         if ([tabController.selectedViewController isKindOfClass:[UINavigationController class]]) {
             
@@ -408,6 +420,10 @@ static TSCLocalisationController *sharedController = nil;
     
     if (navigationController && class == [UINavigationController class]) {
         return navigationController.view;
+    }
+    
+    if (tabController && class == [UITabBarController class]) {
+        return tabController.view;
     }
     
     if (tscTableViewController && class == [TSCTableViewController class]) {
@@ -461,12 +477,15 @@ static TSCLocalisationController *sharedController = nil;
             string = textView.text;
         }
         
-        if (string.localisationKey) {
+        if (string) {
             
-            if (action) {
-                action(view, recursingView, string);
+            if (string.localisationKey) {
+                
+                if (action) {
+                    action(view, recursingView, string);
+                }
+                continue;
             }
-            continue;
         }
         
         [self recurseSubviewsOfView:view withLocalisedViewAction:action];
