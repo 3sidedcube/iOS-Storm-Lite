@@ -27,6 +27,7 @@
 		361819A61A07A46300C18CCB /* TSCLocalisationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819A51A07A46300C18CCB /* TSCLocalisationEditViewController.m */; };
 		361819AA1A07A51E00C18CCB /* libThunderBasics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361819A91A07A51E00C18CCB /* libThunderBasics.a */; };
 		C24047B41A0A64E10089A268 /* NSObject+AddedProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C24047B31A0A64E10089A268 /* NSObject+AddedProperties.m */; };
+		C2CEBA941A0A8E9F00DB3288 /* MDCHUDActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CEBA931A0A8E9F00DB3288 /* MDCHUDActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		361819C51A07A52C00C18CCB /* UITabBarController+TSCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+TSCTabBarController.h"; sourceTree = "<group>"; };
 		C24047B21A0A64E10089A268 /* NSObject+AddedProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AddedProperties.h"; sourceTree = "<group>"; };
 		C24047B31A0A64E10089A268 /* NSObject+AddedProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AddedProperties.m"; sourceTree = "<group>"; };
+		C2CEBA921A0A8E9F00DB3288 /* MDCHUDActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCHUDActivityView.h; sourceTree = "<group>"; };
+		C2CEBA931A0A8E9F00DB3288 /* MDCHUDActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCHUDActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 		3618190D1A078F1E00C18CCB /* StormLite */ = {
 			isa = PBXGroup;
 			children = (
+				C2CEBA921A0A8E9F00DB3288 /* MDCHUDActivityView.h */,
+				C2CEBA931A0A8E9F00DB3288 /* MDCHUDActivityView.m */,
 				C24047B21A0A64E10089A268 /* NSObject+AddedProperties.h */,
 				C24047B31A0A64E10089A268 /* NSObject+AddedProperties.m */,
 				3618190E1A078F1E00C18CCB /* StormLite.h */,
@@ -484,6 +489,7 @@
 				361819301A0792FD00C18CCB /* TSCLocalisationLanguage.m in Sources */,
 				3618194B1A07970400C18CCB /* TSCStormLanguageController.m in Sources */,
 				361819481A0796ED00C18CCB /* TSCContentController.m in Sources */,
+				C2CEBA941A0A8E9F00DB3288 /* MDCHUDActivityView.m in Sources */,
 				C24047B41A0A64E10089A268 /* NSObject+AddedProperties.m in Sources */,
 				361819331A07932B00C18CCB /* TSCLocalisationController.m in Sources */,
 				3618192A1A0792E200C18CCB /* TSCLocalisation.m in Sources */,
