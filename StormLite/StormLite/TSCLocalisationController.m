@@ -26,6 +26,7 @@
 @import Security;
 
 typedef void (^TSCLocalisedViewAction)(UIView *localisedView, UIView *parentView, NSString *string);
+typedef void (^TSCNavigationViewControllerRecursionCallback)(UIViewController *visibleViewController, UINavigationController *navigationController, BOOL *stop);
 
 @interface TSCLocalisationController () <UIGestureRecognizerDelegate, TSCLocalisationEditViewControllerDelegate>
 
@@ -131,13 +132,27 @@ static TSCLocalisationController *sharedController = nil;
                     }
                 }
                 
-                TSCTableViewController *tableViewController = (TSCTableViewController *)[self selectCurrentViewControllerViewWithClass:[TSCTableViewController class]];
-                if (tableViewController) {
-                    tableViewController.dataSource = tableViewController.dataSource;
-                    tableViewController.tableView.scrollEnabled = NO;
-                    [self recurseTableViewHeaderFooterLabelsWithTableViewController:(UITableViewController *)tableViewController action:^(UIView *localisedView, UIView *parentView, NSString *string) {
+                TSCTableViewController *tscTableViewController = (TSCTableViewController *)[self selectCurrentViewControllerViewWithClass:[TSCTableViewController class]];
+                if (tscTableViewController) {
+                    
+                    tscTableViewController.dataSource = tscTableViewController.dataSource;
+                    tscTableViewController.tableView.scrollEnabled = false;
+                    [self recurseTableViewHeaderFooterLabelsWithTableViewController:(UITableViewController *)tscTableViewController action:^(UIView *localisedView, UIView *parentView, NSString *string) {
                         [self addHighlightToView:localisedView];
                     }];
+                }
+                
+                if (!tscTableViewController) {
+                    
+                    UITableViewController *tableViewController = (UITableViewController *)[self selectCurrentViewControllerViewWithClass:[UITableViewController class]];
+                    if (tableViewController) {
+                        
+                        [tableViewController.tableView reloadData];
+                        tableViewController.tableView.scrollEnabled = false;
+                        [self recurseTableViewHeaderFooterLabelsWithTableViewController:tableViewController action:^(UIView *localisedView, UIView *parentView, NSString *string) {
+                            [self addHighlightToView:localisedView];
+                        }];
+                    }
                 }
                 
                 if (self.additionalLocalisedStrings.count > 0) {
@@ -200,13 +215,21 @@ static TSCLocalisationController *sharedController = nil;
         
         // Get tableView controller
         
-        TSCTableViewController *tableViewController = (TSCTableViewController *)[self selectCurrentViewControllerViewWithClass:[TSCTableViewController class]];
-        if (tableViewController) {
+        TSCTableViewController *tscTableViewController = (TSCTableViewController *)[self selectCurrentViewControllerViewWithClass:[TSCTableViewController class]];
+        if (tscTableViewController) {
             
-            tableViewController.tableView.scrollEnabled = true;
+            tscTableViewController.tableView.scrollEnabled = true;
+        }
+        
+        if (!tscTableViewController) {
+            
+            UITableViewController *tableViewController = (UITableViewController *)[self selectCurrentViewControllerViewWithClass:[UITableViewController class]];
+            if (tableViewController) {
+                
+                tableViewController.tableView.scrollEnabled = true;
+            }
         }
 
-        
         if (self.additonalLocalisationButton) {
             [self.additonalLocalisationButton removeFromSuperview];
         }
@@ -242,38 +265,130 @@ static TSCLocalisationController *sharedController = nil;
     }
 }
 
+- (void)recurseNavigationController:(UINavigationController *)navigationViewController usingBlock:(TSCNavigationViewControllerRecursionCallback)block
+{
+    UIViewController *viewController = navigationViewController.visibleViewController;
+    
+    if ([navigationViewController presentedViewController]) {
+        viewController = [navigationViewController presentedViewController];
+    }
+    
+    __block BOOL stop = false;
+    __block TSCNavigationViewControllerRecursionCallback innerBlock = block;
+    
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        
+        UINavigationController *navController = (UINavigationController *)viewController;
+        block(navController.visibleViewController, navController, &stop);
+    } else if (viewController.navigationController) {
+        block(viewController, viewController.navigationController, &stop);
+    } else {
+        return;
+    }
+    
+    if (!stop) {
+        
+        UINavigationController *navController;
+        if ([viewController isKindOfClass:[UINavigationController class]]) {
+            navController = (UINavigationController *)viewController;
+        } else {
+            navController = viewController.navigationController;
+        }
+        
+        if (navController) {
+            [self recurseNavigationController:viewController.navigationController usingBlock:^(UIViewController *visibleViewController, UINavigationController *navigationController, BOOL *innerStop) {
+                
+                innerBlock(visibleViewController, navigationController, &stop);
+                *innerStop = stop;
+            }];
+            
+            if (stop) {
+                return;
+            }
+            
+        } else {
+            return;
+        }
+    } else {
+        return;
+    }
+}
+
 - (NSObject *)selectCurrentViewControllerViewWithClass:(Class)class
 {
     UIView *viewToRecurse;
     UINavigationController *navigationController;
-    TSCTableViewController *tableViewController;
+    UITableViewController *tableViewController;
+    TSCTableViewController *tscTableViewController;
     
-    if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[UINavigationController class]]) {
+    UIWindow *highestWindow = [[UIApplication sharedApplication] keyWindow];
+//    NSInteger windowLevel = -10000;
+//    for (UIWindow *window in [UIApplication sharedApplication].windows) {
+//        
+//        if (!window.hidden && window.windowLevel > windowLevel) {
+//            highestWindow = window;
+//            windowLevel = window.windowLevel;
+//        }
+//    }
+    
+    if ([highestWindow.rootViewController isKindOfClass:[UINavigationController class]]) {
         
-        UINavigationController *navController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        __block UINavigationController *navController = (UINavigationController *)highestWindow.rootViewController;
+        __block UIViewController *viewController = navController.visibleViewController;
         
-        if ([navController.visibleViewController isKindOfClass:[TSCTableViewController class]]) {
-            
-            tableViewController = (TSCTableViewController *)navController.visibleViewController;
+        [self recurseNavigationController:navController usingBlock:^(UIViewController *visibleViewController, UINavigationController *navigationController, BOOL *stop) {
+           
+            viewController = visibleViewController;
+        }];
+        
+        [self recurseNavigationController:navController usingBlock:^(UIViewController *visibleViewController, UINavigationController *navigationController, BOOL *stop) {
+           
+            if (navigationController) {
+                navController = navigationController;
+            } else {
+                *stop = true;
+            }
+        }];
+        
+        if ([viewController isKindOfClass:[TSCTableViewController class]]) {
+            tscTableViewController = (TSCTableViewController *)viewController;
+        } else if ([viewController isKindOfClass:[UITableViewController class]]) {
+            tableViewController = (UITableViewController *)viewController;
         }
         
-        viewToRecurse = navController.visibleViewController.view;
+        viewToRecurse = viewController.view;
         navigationController = navController;
         
-    } else if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[UITabBarController class]]) {
+    } else if ([highestWindow.rootViewController isKindOfClass:[UITabBarController class]]) {
         
-        UITabBarController *tabController = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        UITabBarController *tabController = (UITabBarController *)highestWindow.rootViewController;
         
         if ([tabController.selectedViewController isKindOfClass:[UINavigationController class]]) {
             
-            UINavigationController *navController = (UINavigationController *)tabController.selectedViewController;
+            __block UINavigationController *navController = (UINavigationController *)tabController.selectedViewController;
+            __block UIViewController *viewController = navController.visibleViewController;
             
-            if ([navController.visibleViewController isKindOfClass:[TSCTableViewController class]]) {
+            [self recurseNavigationController:navController usingBlock:^(UIViewController *visibleViewController, UINavigationController *navigationController, BOOL *stop) {
                 
-                tableViewController = (TSCTableViewController *)navController.visibleViewController;
+                viewController = visibleViewController;
+            }];
+            
+            [self recurseNavigationController:navController usingBlock:^(UIViewController *visibleViewController, UINavigationController *navigationController, BOOL *stop) {
+                
+                if (navigationController) {
+                    navController = navigationController;
+                } else {
+                    *stop = true;
+                }
+            }];
+            
+            if ([viewController isKindOfClass:[TSCTableViewController class]]) {
+                tscTableViewController = (TSCTableViewController *)viewController;
+            } else if ([viewController isKindOfClass:[UITableViewController class]]) {
+                tableViewController = (UITableViewController *)viewController;
             }
             
-            viewToRecurse = navController.visibleViewController.view;
+            viewToRecurse = viewController.view;
             navigationController = navController;
             
         } else {
@@ -282,7 +397,7 @@ static TSCLocalisationController *sharedController = nil;
         }
         
     } else {
-        viewToRecurse = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+        viewToRecurse = highestWindow.rootViewController.view;
         
         self.hasUsedWindowRoot = true;
         if (![[UIApplication sharedApplication].keyWindow isMemberOfClass:[UIWindow class]]) {
@@ -294,11 +409,15 @@ static TSCLocalisationController *sharedController = nil;
         return navigationController.view;
     }
     
-    if (tableViewController && class == [TSCTableViewController class]) {
+    if (tscTableViewController && class == [TSCTableViewController class]) {
+        return tscTableViewController;
+    }
+    
+    if (tableViewController && class == [UITableViewController class]) {
         return tableViewController;
     }
     
-    if (viewToRecurse && class != [UINavigationController class] && class != [TSCTableViewController class]) {
+    if (viewToRecurse && class != [UINavigationController class] && class != [TSCTableViewController class] && class != [UITableViewController class]) {
         return viewToRecurse;
     }
     
