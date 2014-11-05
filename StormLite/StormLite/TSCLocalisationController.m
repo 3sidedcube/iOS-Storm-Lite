@@ -702,13 +702,15 @@ static TSCLocalisationController *sharedController = nil;
         
         NSMutableArray *localisations = [NSMutableArray array];
         
-        for (NSString *localisationKey in response.dictionary.allKeys) {
+        if ([response.dictionary respondsToSelector:@selector(allKeys)]) {
             
-            NSDictionary *localisationDictionary = response.dictionary[localisationKey];
-            TSCLocalisation *newLocalisation = [[TSCLocalisation alloc] initWithDictionary:localisationDictionary];
-            newLocalisation.localisationKey = localisationKey;
-            [localisations addObject:newLocalisation];
-            
+            for (NSString *localisationKey in response.dictionary.allKeys) {
+                
+                NSDictionary *localisationDictionary = response.dictionary[localisationKey];
+                TSCLocalisation *newLocalisation = [[TSCLocalisation alloc] initWithDictionary:localisationDictionary];
+                newLocalisation.localisationKey = localisationKey;
+                [localisations addObject:newLocalisation];
+            }
         }
         
         self.localisations = [NSMutableArray arrayWithArray:localisations];

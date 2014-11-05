@@ -18,7 +18,7 @@
 
 #import "TSCDeveloperController.h"
 #import "TSCAuthenticationController.h"
-#import "PCHUDActivityView.h"
+//#import "PCHUDActivityView.h"
 #import "TSCContentController.h"
 #import "TSCStormLanguageController.h"
 #import "TSCRequestController.h"
@@ -85,7 +85,7 @@ static TSCDeveloperController *sharedController = nil;
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         
-        [PCHUDActivityView finishInView:self.appWindow];
+     //   [PCHUDActivityView finishInView:self.appWindow];
         
         UIViewAnimationOptions option;
         if([TSCDeveloperController isDevMode]){
@@ -189,7 +189,7 @@ static TSCDeveloperController *sharedController = nil;
         
         [[TSCAuthenticationController sharedInstance] authenticateUsername:username password:password];
         
-        [PCHUDActivityView startInView:[[UIApplication sharedApplication] windows][0]];
+      //  [PCHUDActivityView startInView:[[UIApplication sharedApplication] windows][0]];
         
     } else {
         

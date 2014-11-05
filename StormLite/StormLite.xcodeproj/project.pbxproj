@@ -19,7 +19,6 @@
 		361819361A07935500C18CCB /* UIWindow+TSCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819351A07935500C18CCB /* UIWindow+TSCWindow.m */; };
 		361819391A07936F00C18CCB /* TSCAuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819381A07936F00C18CCB /* TSCAuthenticationController.m */; };
 		3618193C1A07939400C18CCB /* TSCDeveloperController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3618193B1A07939400C18CCB /* TSCDeveloperController.m */; };
-		361819421A07956C00C18CCB /* PCHUDActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819411A07956C00C18CCB /* PCHUDActivityView.m */; };
 		361819481A0796ED00C18CCB /* TSCContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361819471A0796ED00C18CCB /* TSCContentController.m */; };
 		3618194B1A07970400C18CCB /* TSCStormLanguageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3618194A1A07970400C18CCB /* TSCStormLanguageController.m */; };
 		3618194E1A07972900C18CCB /* untar.c in Sources */ = {isa = PBXBuildFile; fileRef = 3618194C1A07972900C18CCB /* untar.c */; };
@@ -77,8 +76,6 @@
 		361819381A07936F00C18CCB /* TSCAuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCAuthenticationController.m; sourceTree = "<group>"; };
 		3618193A1A07939400C18CCB /* TSCDeveloperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCDeveloperController.h; sourceTree = "<group>"; };
 		3618193B1A07939400C18CCB /* TSCDeveloperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCDeveloperController.m; sourceTree = "<group>"; };
-		361819401A07956C00C18CCB /* PCHUDActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCHUDActivityView.h; sourceTree = "<group>"; };
-		361819411A07956C00C18CCB /* PCHUDActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCHUDActivityView.m; sourceTree = "<group>"; };
 		361819461A0796ED00C18CCB /* TSCContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCContentController.h; sourceTree = "<group>"; };
 		361819471A0796ED00C18CCB /* TSCContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCContentController.m; sourceTree = "<group>"; };
 		361819491A07970400C18CCB /* TSCStormLanguageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCStormLanguageController.h; sourceTree = "<group>"; };
@@ -229,8 +226,6 @@
 				361819381A07936F00C18CCB /* TSCAuthenticationController.m */,
 				3618193A1A07939400C18CCB /* TSCDeveloperController.h */,
 				3618193B1A07939400C18CCB /* TSCDeveloperController.m */,
-				361819401A07956C00C18CCB /* PCHUDActivityView.h */,
-				361819411A07956C00C18CCB /* PCHUDActivityView.m */,
 				361819461A0796ED00C18CCB /* TSCContentController.h */,
 				361819471A0796ED00C18CCB /* TSCContentController.m */,
 				361819491A07970400C18CCB /* TSCStormLanguageController.h */,
@@ -394,6 +389,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C2AE978B1A09365600606D13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		3618190A1A078F1E00C18CCB /* StormLite */ = {
 			isa = PBXNativeTarget;
@@ -402,6 +407,7 @@
 				361819071A078F1E00C18CCB /* Sources */,
 				361819081A078F1E00C18CCB /* Frameworks */,
 				361819091A078F1E00C18CCB /* CopyFiles */,
+				C2AE978B1A09365600606D13 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -484,7 +490,6 @@
 				361819301A0792FD00C18CCB /* TSCLocalisationLanguage.m in Sources */,
 				3618194B1A07970400C18CCB /* TSCStormLanguageController.m in Sources */,
 				361819481A0796ED00C18CCB /* TSCContentController.m in Sources */,
-				361819421A07956C00C18CCB /* PCHUDActivityView.m in Sources */,
 				361819331A07932B00C18CCB /* TSCLocalisationController.m in Sources */,
 				3618192A1A0792E200C18CCB /* TSCLocalisation.m in Sources */,
 				3618193C1A07939400C18CCB /* TSCDeveloperController.m in Sources */,

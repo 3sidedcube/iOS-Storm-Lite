@@ -8,6 +8,7 @@
 
 #import "TSCStormLanguageController.h"
 #import "TSCContentController.h"
+#import "TSCThunderBasics.h"
 
 @implementation TSCStormLanguageController
 
@@ -20,15 +21,28 @@ static TSCStormLanguageController *sharedController = nil;
 
 - (id)init
 {
-    self = [super initWithDictionary:nil];
+    self = [super init];
     
     if (self) {
         
         self.contentController = [TSCContentController sharedController];
-        
         sharedController = self;
     }
     
+    return self;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    
+    if (self) {
+        
+        self.contentController = [TSCContentController sharedController];
+        self.languageDictionary = dictionary;
+    }
+    
+    sharedController = self;
     return self;
 }
 
@@ -162,5 +176,33 @@ static TSCStormLanguageController *sharedController = nil;
 {
     return [self localeForLanguageKey:self.currentLanguage];
 }
+
+#pragma mark - Lookup methods
+
+- (NSString *)stringForKey:(NSString *)key
+{
+    return [self stringForKey:key withFallbackString:key];
+}
+
+- (NSString *)stringForKey:(NSString *)key withFallbackString:(NSString *)fallbackString
+{
+    NSString *languageString = self.languageDictionary[key];
+    
+    if (languageString && languageString.length > 0) {
+        return languageString;
+    } else {
+        return fallbackString;
+    }
+}
+
+- (NSString *)stringForDictionary:(NSDictionary *)dictionary
+{
+    if ((![dictionary isEqual:[NSNull null]]) && dictionary) {
+        return [self stringForKey:dictionary[@"content"] withFallbackString:nil];
+    }
+    
+    return nil;
+}
+
 
 @end
