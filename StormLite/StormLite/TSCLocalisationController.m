@@ -85,9 +85,9 @@ static TSCLocalisationController *sharedController = nil;
     
     if (self.editing && !self.isReloading) {
         
-        self.isReloading = true;
         if ([[TSCAuthenticationController sharedInstance] isAuthenticated]) {
             
+            self.isReloading = true;
             [self reloadLocalisationsWithCompletion:^(NSError *error) {
                 
                 if (error) {
@@ -171,6 +171,7 @@ static TSCLocalisationController *sharedController = nil;
         } else {
             
             self.editing = NO;
+            self.isReloading = false;
             [self askForLogin];
         }
         
