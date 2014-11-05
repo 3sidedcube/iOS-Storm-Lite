@@ -264,7 +264,7 @@ static TSCContentController *sharedController = nil;
             
         } else {
             
-            NSLog(@"<ThunderStorm> [Updates] Downloading update bundle failed (%i): %@", ((NSHTTPURLResponse *)response).statusCode, error.localizedDescription);
+            NSLog(@"<ThunderStorm> [Updates] Downloading update bundle failed (%li): %@", (long)((NSHTTPURLResponse *)response).statusCode, error.localizedDescription);
             
         }
         
@@ -539,7 +539,7 @@ static TSCContentController *sharedController = nil;
 {
     //Get file size
     NSDictionary *attrs = [self.fileManager attributesOfItemAtPath:[NSString stringWithFormat:@"%@/data.tar.gz", self.cacheDirectory] error:NULL];
-    UInt32 result = [attrs fileSize];
+    NSInteger result = [attrs fileSize];
     
     //Log removal
     NSLog(@"<ThunderStorm> [Updates] Removing corrupt delta bundle of size: %i bytes", (unsigned int)result);

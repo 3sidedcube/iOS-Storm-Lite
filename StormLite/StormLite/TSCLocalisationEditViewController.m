@@ -52,9 +52,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-
-    TSCTableInputViewCell *cell = (TSCTableInputViewCell *)[self.tableView cellForRowAtIndexPath:self.selectedIndexPath];
-    [cell setEditing:NO animated:YES];
 }
 
 - (void)reload
@@ -84,12 +81,16 @@
         [[TSCLocalisationController sharedController] registerLocalisationEdited:self.localisation];
     }
     
+    TSCTableInputViewCell *cell = (TSCTableInputViewCell *)[self.tableView cellForRowAtIndexPath:self.selectedIndexPath];
+    [cell setEditing:NO animated:YES];
     [self dismissViewControllerAnimated:true completion:nil];
     [self.delegate editingSavedInViewController:self];
 }
 
 - (void)handleCancel:(id)sender
 {
+    TSCTableInputViewCell *cell = (TSCTableInputViewCell *)[self.tableView cellForRowAtIndexPath:self.selectedIndexPath];
+    [cell setEditing:NO animated:YES];
     [self dismissViewControllerAnimated:true completion:nil];
     [self.delegate editingCancelledInViewController:self];
 }

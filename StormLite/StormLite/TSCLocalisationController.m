@@ -867,12 +867,14 @@ static TSCLocalisationController *sharedController = nil;
 
 - (void)editingCancelledInViewController:(TSCLocalisationEditViewController *)viewController
 {
+    [self.localisationEditingWindow resignKeyWindow];
     self.localisationEditingWindow.hidden = true;
     self.localisationEditingWindow = nil;
 }
 
 - (void)editingSavedInViewController:(TSCLocalisationEditViewController *)viewController
 {
+    [self.localisationEditingWindow resignKeyWindow];
     self.localisationEditingWindow.hidden = true;
     self.localisationEditingWindow = nil;
     
