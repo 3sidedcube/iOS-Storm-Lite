@@ -49,6 +49,14 @@
     [self reload];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    TSCTableInputViewCell *cell = (TSCTableInputViewCell *)[self.tableView cellForRowAtIndexPath:self.selectedIndexPath];
+    [cell setEditing:NO animated:YES];
+}
+
 - (void)reload
 {
     
