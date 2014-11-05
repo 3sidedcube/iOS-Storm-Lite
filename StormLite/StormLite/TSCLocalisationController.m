@@ -20,6 +20,7 @@
 #import "TSCThunderBasics.h"
 #import "TSCThunderRequest.h"
 #import "TSCThunderTable.h"
+#import "MDCHUDActivityView.h"
 
 @import UIKit;
 @import LocalAuthentication;
@@ -41,6 +42,7 @@ typedef void (^TSCNavigationViewControllerRecursionCallback)(UIViewController *v
 @property (nonatomic, strong) NSMutableArray *additionalLocalisedStrings;
 @property (nonatomic, strong) UIButton *additonalLocalisationButton;
 @property (nonatomic, strong) UIWindow *localisationEditingWindow;
+@property (nonatomic, strong) UIWindow *activityIndicatorWindow;
 @property (nonatomic, strong) NSMutableDictionary *localisationsDictionary;
 
 @property (nonatomic, assign) BOOL isReloading;
@@ -88,6 +90,7 @@ static TSCLocalisationController *sharedController = nil;
         if ([[TSCAuthenticationController sharedInstance] isAuthenticated]) {
             
             self.isReloading = true;
+            [self showActivityIndicatorWithTitle:@"Loading Localisations"];
             [self reloadLocalisationsWithCompletion:^(NSError *error) {
                 
                 if (error) {
@@ -178,6 +181,7 @@ static TSCLocalisationController *sharedController = nil;
                 }
                 
                 self.isReloading = false;
+                [self dismissActivityIndicator];
             }];
         } else {
             
@@ -813,6 +817,7 @@ static TSCLocalisationController *sharedController = nil;
     NSDictionary *payloadDictionary = @{@"strings":localisationsDictionary};
     self.editedLocalisations = [NSMutableArray new];
     
+    [self showActivityIndicatorWithTitle:@"Saving"];
     [self.requestController put:@"native" bodyParams:payloadDictionary completion:^(TSCRequestResponse *response, NSError *error) {
         
         if (error) {
@@ -821,6 +826,7 @@ static TSCLocalisationController *sharedController = nil;
             completion(error);
             return;
         }
+        [self dismissActivityIndicator];
         
         completion (nil);
     }];
@@ -998,9 +1004,11 @@ static TSCLocalisationController *sharedController = nil;
         
         __block NSString *username = [alertView textFieldAtIndex:0].text;
         __block NSString *password = [alertView textFieldAtIndex:1].text;
+        [self showActivityIndicatorWithTitle:@"Logging in"];
         
         [[TSCAuthenticationController sharedInstance] authenticateUsername:username password:password completion:^(BOOL sucessful, NSError *error) {
             
+            [self dismissActivityIndicator];
             if (sucessful) {
                 
                 [self toggleEditing];
@@ -1018,6 +1026,22 @@ static TSCLocalisationController *sharedController = nil;
 - (NSDictionary *)localisationDictionaryForKey:(NSString *)key
 {
     return self.localisationsDictionary[key];
+}
+
+#pragma mark - Activity View Controllers
+
+- (void)showActivityIndicatorWithTitle:(NSString *)title
+{
+    self.activityIndicatorWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.activityIndicatorWindow.hidden = false;
+    
+    [MDCHUDActivityView startInView:self.activityIndicatorWindow text:title];
+}
+
+- (void)dismissActivityIndicator
+{
+    [MDCHUDActivityView finishInView:self.activityIndicatorWindow];
+    self.activityIndicatorWindow = nil;
 }
 
 @end
